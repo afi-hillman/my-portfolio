@@ -21,6 +21,12 @@ const Sandbox = () => {
       <div className="px-4 bg-destructive">
         <p className="text-destructive-foreground">DESTRUCTIVE</p>
       </div>
+      <div className="px-4 bg-popover">
+        <p className="text-popover-foreground">POPOVER</p>
+      </div>
+      <div className="px-4 bg-accent">
+        <p className="text-accent-foreground">ACCENT</p>
+      </div>
     </div>
   );
 };
