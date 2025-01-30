@@ -10,8 +10,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#fffffe",
+        background: { DEFAULT: "#fffffe", offset: "#e3f6f5" },
         foreground: "#272343",
+        text: {
+          DEFAULT: "#272343",
+          offset: "#2d334a",
+        },
         card: {
           DEFAULT: "#e3f6f5",
           foreground: "#2d334a",
@@ -22,7 +26,8 @@ export default {
         },
         primary: {
           DEFAULT: "#ff9d00",
-          foreground: "#ffca00",
+          foreground: "#272343",
+          offset: "#ffca00",
         },
         secondary: {
           DEFAULT: "#bae8e8",
@@ -42,7 +47,7 @@ export default {
         },
         border: "#e3f6f5",
         input: "#e3f6f5",
-        ring: "#ff9d00",
+        ring: "#e3f6f5",
         chart: {
           "1": "#ff9d00",
           "2": "#ffca00",

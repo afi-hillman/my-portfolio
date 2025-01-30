@@ -1,8 +1,10 @@
 import { techStack } from "@/components/techStack";
+import { projects } from "@/components/projects";
+import Image from "next/image";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center gap-8">
       <div className="flex gap-2">
         <div>image</div>
         <div>
@@ -31,7 +33,7 @@ const Home = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-grow gap-2 rounded-xl p-2.5 border border-ring hover:bg-foreground/10 duration-300 dark:bg-red-500"
+              className="flex flex-grow gap-2 rounded-xl p-2.5 border border-ring hover:bg-muted duration-300 dark:bg-red-500"
             >
               <div className={`p-3 rounded-lg w-fit ${tech.bgColor}`}>
                 {tech.icon}
@@ -43,6 +45,93 @@ const Home = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="space-y-10 w-full">
+        <div className="space-y-4">
+          <h1>My Projects</h1>
+          <p>list of shiz</p>
+        </div>
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="flex flex-col justify-center items-center relative"
+          >
+            <Image
+              src={project.image}
+              width={800}
+              height={500}
+              alt="sample"
+              className="bg-cover rounded-xl opacity-70 border border-ring"
+            />
+            <div className="p-6 w-[800px] absolute bottom-0">
+              <div>
+                <Image
+                  width={48}
+                  height={48}
+                  src={project.logo}
+                  className="w-12 h-12 rounded-md border border-ring"
+                  alt="project logo"
+                />
+                <p>{project.title}</p>
+              </div>
+              <div className="flex gap-2 flex-wrap">
+                {project?.tech?.map((tech, techIndex) => (
+                  <div
+                    key={techIndex}
+                    className="flex gap-2 items-center p-2 rounded-md border border-ring"
+                  >
+                    {tech?.icon}
+                    <p>{tech?.name}</p>
+                  </div>
+                ))}
+              </div>
+              <p>{project.subtitle}</p>
+              <button className="bg-white rounded-md flex items-center gap-2 px-2 py-1">
+                <p>Learn more</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-dasharray="20"
+                      stroke-dashoffset="20"
+                      d="M3 12h17.5"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        dur="0.2s"
+                        values="20;0"
+                      />
+                    </path>
+                    <path
+                      stroke-dasharray="12"
+                      stroke-dashoffset="12"
+                      d="M21 12l-7 7M21 12l-7 -7"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        begin="0.2s"
+                        dur="0.2s"
+                        values="12;0"
+                      />
+                    </path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
