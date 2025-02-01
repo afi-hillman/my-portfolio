@@ -52,24 +52,23 @@ const Home = () => {
           <p>list of shiz</p>
         </div>
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-center items-center relative"
-          >
-            <Image
-              src={project.image}
-              width={800}
-              height={500}
-              alt="sample"
-              className="bg-cover rounded-xl opacity-70 border border-ring"
-            />
-            <div className="p-6 w-[800px] absolute bottom-0">
+          <div key={index} className="flex flex-col relative group">
+            <div>
+              <Image
+                src={project.image}
+                width={1920}
+                height={1080}
+                alt="sample"
+                className="bg-cover rounded-xl opacity-75 border border-ring group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="p-6 w-full absolute text-white bg-black/80 bottom-0 rounded-b-lg rounded-bl-lg">
               <div>
                 <Image
                   width={48}
                   height={48}
                   src={project.logo}
-                  className="w-12 h-12 rounded-md border border-ring"
+                  className="w-12 h-12 rounded-md border border-ring group-hover:w-10 group-hover:h-10 duration-300"
                   alt="project logo"
                 />
                 <p>{project.title}</p>
@@ -86,7 +85,7 @@ const Home = () => {
                 ))}
               </div>
               <p>{project.subtitle}</p>
-              <button className="bg-white rounded-md flex items-center gap-2 px-2 py-1">
+              <button className="bg-white text-black rounded-md flex items-center gap-2 px-2 py-1">
                 <p>Learn more</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,13 +96,13 @@ const Home = () => {
                   <g
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                   >
                     <path
-                      stroke-dasharray="20"
-                      stroke-dashoffset="20"
+                      strokeDasharray="20"
+                      strokeDashoffset="20"
                       d="M3 12h17.5"
                     >
                       <animate
@@ -114,8 +113,8 @@ const Home = () => {
                       />
                     </path>
                     <path
-                      stroke-dasharray="12"
-                      stroke-dashoffset="12"
+                      strokeDasharray="12"
+                      strokeDashoffset="12"
                       d="M21 12l-7 7M21 12l-7 -7"
                     >
                       <animate

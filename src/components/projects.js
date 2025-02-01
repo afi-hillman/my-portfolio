@@ -6,7 +6,7 @@ export const projects = [
     subtitle: "Developed time & attendance module for HR Management System",
     tech: [techFinder("React"), techFinder("Material UI")].filter(Boolean),
     logo: "/adnexio_logo.png",
-    image: "/sample_image_1.jpg",
+    image: "/sample_image_2.png",
   },
   {
     title: "decoris",
