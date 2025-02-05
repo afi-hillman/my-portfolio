@@ -52,17 +52,20 @@ const Home = () => {
           <p>list of shiz</p>
         </div>
         {projects.map((project, index) => (
-          <div key={index} className="flex flex-col relative group">
+          <div
+            key={index}
+            className="flex flex-col relative group overflow-hidden rounded-xl border border-ring cursor-pointer"
+          >
             <div>
               <Image
                 src={project.image}
                 width={1920}
                 height={1080}
-                alt="sample"
-                className="bg-cover rounded-xl opacity-75 border border-ring group-hover:scale-105 transition-transform duration-300"
+                alt="project image"
+                className="bg-cover rounded-xl opacity-75 group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="p-6 w-full absolute text-white bg-black/80 bottom-0 rounded-b-lg rounded-bl-lg">
+            <div className="p-6 w-full absolute text-white bg-black/80 bottom-0  translate-y-14 group-hover:translate-y-0 transition-all duration-300">
               <div>
                 <Image
                   width={48}
@@ -73,7 +76,7 @@ const Home = () => {
                 />
                 <p>{project.title}</p>
               </div>
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex gap-2 flex-wrap my-2">
                 {project?.tech?.map((tech, techIndex) => (
                   <div
                     key={techIndex}
@@ -84,50 +87,54 @@ const Home = () => {
                   </div>
                 ))}
               </div>
-              <p>{project.subtitle}</p>
-              <button className="bg-white text-black rounded-md flex items-center gap-2 px-2 py-1">
-                <p>Learn more</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
+              <p className="mb-4 group-hover:mb-2 transition-all duration-300">
+                {project.subtitle}
+              </p>
+              <div className="group">
+                <button className="bg-white text-black rounded-md flex items-center gap-2 px-2 py-1">
+                  <p>Learn more</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
                   >
-                    <path
-                      strokeDasharray="20"
-                      strokeDashoffset="20"
-                      d="M3 12h17.5"
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                     >
-                      <animate
-                        fill="freeze"
-                        attributeName="stroke-dashoffset"
-                        dur="0.2s"
-                        values="20;0"
-                      />
-                    </path>
-                    <path
-                      strokeDasharray="12"
-                      strokeDashoffset="12"
-                      d="M21 12l-7 7M21 12l-7 -7"
-                    >
-                      <animate
-                        fill="freeze"
-                        attributeName="stroke-dashoffset"
-                        begin="0.2s"
-                        dur="0.2s"
-                        values="12;0"
-                      />
-                    </path>
-                  </g>
-                </svg>
-              </button>
+                      <path
+                        strokeDasharray="20"
+                        strokeDashoffset="20"
+                        d="M3 12h17.5"
+                      >
+                        <animate
+                          fill="freeze"
+                          attributeName="stroke-dashoffset"
+                          dur="0.2s"
+                          values="20;0"
+                        />
+                      </path>
+                      <path
+                        strokeDasharray="12"
+                        strokeDashoffset="12"
+                        d="M21 12l-7 7M21 12l-7 -7"
+                      >
+                        <animate
+                          fill="freeze"
+                          attributeName="stroke-dashoffset"
+                          begin="0.2s"
+                          dur="0.2s"
+                          values="12;0"
+                        />
+                      </path>
+                    </g>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         ))}
