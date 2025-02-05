@@ -1,32 +1,59 @@
 import { techStack } from "@/components/techStack";
 import { projects } from "@/components/projects";
 import Image from "next/image";
+import ContactButton from "@/components/ContactButton";
 
 const Home = () => {
   return (
     <div className="flex flex-col items-center gap-8">
-      <div className="flex gap-2">
-        <div>image</div>
+      {/* <div className="flex gap-2 items-end">
+        <Image
+          src={"/gojo_pfp.jpg"}
+          width={1920}
+          height={1080}
+          alt="my picture"
+          className="bg-cover w-20 h-20 rounded-full border border-ring"
+        />
         <div>
-          <p>Afi Hillman</p>
-          <p>Based in Malaysia</p>
+          <p>What&apos;s up, you can call me Afi</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+          >
+            <path
+              fill="#dd2e44"
+              d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4z"
+            />
+            <path
+              fill="#eee"
+              d="M.555 29h34.891A3.97 3.97 0 0 0 36 27H0c0 .732.211 1.409.555 2M0 23h36v2H0zm0-4h36v2H0zm0-4h36v2H0zm0-4h36v2H0zm.555-4A3.96 3.96 0 0 0 0 9h36c0-.732-.211-1.41-.555-2z"
+            />
+            <path fill="#010066" d="M18 5H4a4 4 0 0 0-4 4v10h18z" />
+            <path
+              fill="#ffcc4d"
+              d="M9.534 17.233a5.234 5.234 0 0 1-.001-10.466c.715 0 1.397.146 2.018.405A5.96 5.96 0 0 0 8 6a6 6 0 0 0 0 12a5.96 5.96 0 0 0 3.551-1.172a5.2 5.2 0 0 1-2.017.405"
+            />
+            <path
+              fill="#ffcc4d"
+              d="m12.922 8.829l.334 1.62l1.003-1.315l-.402 1.604l1.475-.749l-1.059 1.271l1.654-.035l-1.505.686l1.505.686l-1.654-.035l1.059 1.271l-1.475-.749l.402 1.605l-1.003-1.316l-.334 1.621l-.334-1.621l-1.003 1.316l.402-1.605l-1.475.749l1.058-1.271l-1.653.035l1.505-.686l-1.505-.686l1.653.035l-1.058-1.271l1.475.749l-.402-1.604l1.003 1.315z"
+            />
+          </svg>
         </div>
-      </div>
-      <div>
-        <h1>SOFTWARE</h1>
-        <div className="flex items-center gap-2">
-          <h1 className="text-center">ENGINEER</h1>
-          <div className="rounded-full border-ring border py-4 px-3 h-[60px] flex gap-2 items-center hover:bg-primary hover:text-primary-foreground duration-300 cursor-pointer">
-            <div className="relative rounded-full bg-green-500 w-4 h-4">
-              <div className="rounded-full absolute bg-green-500 animate-ping w-4 h-4"></div>
-            </div>
-            <p>Let&apos;s Connect!</p>
+      </div> */}
+      <div className="w-fit self-start">
+        <div className="flex items-end gap-2 relative">
+          <h4>What&apos;s good, you can call me Afi</h4>
+          <div className="absolute -bottom-[70%] right-[35%] ">
+            <ContactButton />
           </div>
         </div>
+        <p className="text-[72px]">I&apos;m a software engineer</p>
       </div>
-      <div className="space-y-10 w-full">
+      <div className="space-y-4 w-full">
         <div className="space-y-4">
-          <h1>My Tech Stack</h1>
+          <h2>My Tech Stack</h2>
           <p>list of shiz</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-between">
@@ -46,9 +73,9 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="space-y-10 w-full">
+      <div className="space-y-4 w-full">
         <div className="space-y-4">
-          <h1>My Projects</h1>
+          <h2>My Projects</h2>
           <p>list of shiz</p>
         </div>
         {projects.map((project, index) => (
