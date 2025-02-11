@@ -1,12 +1,24 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const NavMenu = () => {
+  const router = useRouter();
   return (
     <div className="flex justify-between items-center py-[50px]">
-      <p className="hover:text-[#ffb703] cursor-pointer">@afi-hillman</p>
+      <p
+        className="hover:text-[#ffb703] cursor-pointer"
+        onClick={() => router.push("/")}
+      >
+        @afi-hillman
+      </p>
       <div className="flex items-center">
         {navItems.map((item, index) => (
-          <div key={index} className="py-3 px-5 group cursor-pointer">
+          <div
+            key={index}
+            className="py-3 px-5 group cursor-pointer"
+            onClick={() => router.push(item.href)}
+          >
             <div className="relative flex items-center justify-between gap-1  after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
               <p className="font-semibold">{item.prefix}</p>
               <p>{item.label}</p>
@@ -35,8 +47,8 @@ const NavMenu = () => {
 export default NavMenu;
 
 const navItems = [
-  { prefix: "01", label: "home" },
-  { prefix: "02", label: "experience" },
-  { prefix: "03", label: "about" },
-  { prefix: "04", label: "blog" },
+  { prefix: "01", label: "home", href: "/" },
+  { prefix: "02", label: "experience", href: "/experience" },
+  { prefix: "03", label: "about", href: "/about" },
+  { prefix: "04", label: "blog", href: "/blog" },
 ];
