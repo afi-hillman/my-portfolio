@@ -10,11 +10,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: { DEFAULT: "#fffffe", offset: "#e3f6f5" },
+        background: { DEFAULT: "#fffffe", offset: "#e3f6f5", dark: "#0e141b" },
         foreground: "#272343",
         text: {
           DEFAULT: "#272343",
           offset: "#2d334a",
+          subtitle: "#818a91",
+          dark: "#ffffff",
         },
         card: {
           DEFAULT: "#e3f6f5",

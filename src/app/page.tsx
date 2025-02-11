@@ -1,10 +1,13 @@
+"use client";
 import { techStack } from "@/components/techStack";
 import { projects } from "@/components/projects";
 import Image from "next/image";
 import ContactButton from "@/components/ContactButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col items-center gap-8">
       {/* <div className="flex gap-2 items-end">
@@ -49,11 +52,16 @@ const Home = () => {
           <h4 className="text-primary">
             What&apos;s good, you can call me Afi
           </h4>
-          <div className="absolute -bottom-[70%] right-[35%] ">
+          <div className="absolute -bottom-[70%] right-[50%] ">
             <ContactButton />
           </div>
         </div>
         <p className="text-[72px]">I&apos;m a software engineer</p>
+        <h3 className=" text-text-subtitle">
+          Fullstack development is the name of the game, and clean code is how I
+          play. <br /> I approach every project like a well-planned strategy
+          —efficient, scalable, and built to win.
+        </h3>
       </div>
       {/* EXPERIENCE */}
       <div className="space-y-4 w-full">
@@ -129,8 +137,10 @@ const Home = () => {
       {/* TECH STACK */}
       <div className="space-y-4 w-full">
         <div className="space-y-4">
-          <h2>My Tech Stack</h2>
-          <p>Build Loadout: Some of the tools in my dev arsenal</p>
+          <h2>Tech Stack</h2>
+          <p className="text-text-subtitle">
+            Build Loadout: Some of the tools in my dev arsenal
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-between">
           {techStack.map((tech, index) => (
@@ -152,13 +162,16 @@ const Home = () => {
       {/* PROJECTS */}
       <div className="space-y-4 w-full">
         <div className="space-y-4">
-          <h2>My Projects</h2>
-          <p>My Code Campaigns: One line at a time</p>
+          <h2>Projects</h2>
+          <p className="text-text-subtitle">
+            Work/Personal Code Campaigns: One line at a time
+          </p>
         </div>
         {projects.map((project, index) => (
           <div
             key={index}
             className="flex flex-col relative group overflow-hidden rounded-xl border border-ring cursor-pointer"
+            onClick={() => router.push(`/projects/${project.id}`)}
           >
             <div>
               <Image
