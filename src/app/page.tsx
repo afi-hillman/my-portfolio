@@ -46,7 +46,9 @@ const Home = () => {
       {/* ABOUT */}
       <div className="w-fit self-start">
         <div className="flex items-end gap-2 relative">
-          <h4>What&apos;s good, you can call me Afi</h4>
+          <h4 className="text-primary">
+            What&apos;s good, you can call me Afi
+          </h4>
           <div className="absolute -bottom-[70%] right-[35%] ">
             <ContactButton />
           </div>
@@ -67,7 +69,15 @@ const Home = () => {
           <TabsContent value="career">
             <div className="border border-ring p-4 rounded-xl">
               <div className="flex gap-4">
-                <div className="rounded-full w-12 h-12">image</div>
+                <div className="border border-ring rounded-full flex justify-center items-center w-12 h-12">
+                  {/* <Image
+                    src={"/um_logo.png"}
+                    width={48}
+                    height={48}
+                    alt={"university logo"}
+                    className="w-12 h-12"
+                  /> */}
+                </div>
                 <div>
                   <h4 className="text-primary">INVOKE Solutions Sdn. Bhd.</h4>
                   <h5>Software Engineer</h5>
@@ -120,7 +130,7 @@ const Home = () => {
       <div className="space-y-4 w-full">
         <div className="space-y-4">
           <h2>My Tech Stack</h2>
-          <p>list of shiz</p>
+          <p>Build Loadout: Some of the tools in my dev arsenal</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-between">
           {techStack.map((tech, index) => (
@@ -143,7 +153,7 @@ const Home = () => {
       <div className="space-y-4 w-full">
         <div className="space-y-4">
           <h2>My Projects</h2>
-          <p>list of shiz</p>
+          <p>My Code Campaigns: One line at a time</p>
         </div>
         {projects.map((project, index) => (
           <div
@@ -165,7 +175,7 @@ const Home = () => {
                   width={48}
                   height={48}
                   src={project.logo}
-                  className="w-12 h-12 rounded-md border border-ring group-hover:w-10 group-hover:h-10 duration-300"
+                  className="w-12 h-12 rounded-md border border-ring group-hover:w-10 group-hover:h-10 duration-300 bg-white"
                   alt="project logo"
                 />
                 <p>{project.title}</p>

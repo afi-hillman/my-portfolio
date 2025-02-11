@@ -7,7 +7,7 @@ const NavMenu = () => {
       <div className="flex items-center">
         {navItems.map((item, index) => (
           <div key={index} className="py-3 px-5 group cursor-pointer">
-            <div className="relative flex items-center justify-between gap-1  after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-red-500 after:transition-all after:duration-300 group-hover:after:w-full">
+            <div className="relative flex items-center justify-between gap-1  after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
               <p className="font-semibold">{item.prefix}</p>
               <p>{item.label}</p>
             </div>
