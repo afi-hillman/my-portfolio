@@ -2,6 +2,7 @@ import { techStack } from "@/components/techStack";
 import { projects } from "@/components/projects";
 import Image from "next/image";
 import ContactButton from "@/components/ContactButton";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Home = () => {
   return (
@@ -42,6 +43,7 @@ const Home = () => {
           </svg>
         </div>
       </div> */}
+      {/* ABOUT */}
       <div className="w-fit self-start">
         <div className="flex items-end gap-2 relative">
           <h4>What&apos;s good, you can call me Afi</h4>
@@ -51,6 +53,70 @@ const Home = () => {
         </div>
         <p className="text-[72px]">I&apos;m a software engineer</p>
       </div>
+      {/* EXPERIENCE */}
+      <div className="space-y-4 w-full">
+        <Tabs defaultValue="career" className="w-full">
+          <TabsList className="w-full">
+            <TabsTrigger value="career" className="w-full">
+              Career
+            </TabsTrigger>
+            <TabsTrigger value="education" className="w-full">
+              Education
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="career">
+            <div className="border border-ring p-4 rounded-xl">
+              <div className="flex gap-4">
+                <div className="rounded-full w-12 h-12">image</div>
+                <div>
+                  <h4 className="text-primary">INVOKE Solutions Sdn. Bhd.</h4>
+                  <h5>Software Engineer</h5>
+                  <p className="text-gray text-xs">July 2023 - Present</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+          <TabsContent value="education">
+            <div className="border border-ring p-4 rounded-xl space-y-2">
+              <div className="flex gap-4">
+                <div className="border border-ring rounded-full flex justify-center items-center w-12 h-12">
+                  {/* <Image
+                    src={"/um_logo.png"}
+                    width={48}
+                    height={48}
+                    alt={"university logo"}
+                    className="w-12 h-12"
+                  /> */}
+                </div>
+                <div>
+                  <h4 className="text-primary">University of Malaya</h4>
+                  <h5>Bachelor of Mechanical Engineering</h5>
+                  <p className="text-gray text-xs">
+                    September 2018 - July 2022
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="border border-ring rounded-full flex justify-center items-center w-12 h-12">
+                  {/* <Image
+                    src={"/um_logo.png"}
+                    width={48}
+                    height={48}
+                    alt={"university logo"}
+                    className="w-12 h-12"
+                  /> */}
+                </div>
+                <div>
+                  <h4 className="text-primary">University of Malaya</h4>
+                  <h5>Foundation in Physical Sciences</h5>
+                  <p className="text-gray text-xs">June 2017 - April 2018</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </div>
+      {/* TECH STACK */}
       <div className="space-y-4 w-full">
         <div className="space-y-4">
           <h2>My Tech Stack</h2>
@@ -73,6 +139,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      {/* PROJECTS */}
       <div className="space-y-4 w-full">
         <div className="space-y-4">
           <h2>My Projects</h2>

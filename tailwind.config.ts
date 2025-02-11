@@ -45,6 +45,9 @@ export default {
           DEFAULT: "#d32f2f",
           foreground: "#ffffff",
         },
+        gray: {
+          DEFAULT: "#8A8A8A",
+        },
         border: "#e3f6f5",
         input: "#e3f6f5",
         ring: "#e3f6f5",
