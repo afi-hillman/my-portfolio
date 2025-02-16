@@ -1,29 +1,23 @@
 "use client";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import React from "react";
 
 const NavMenu = () => {
-  const router = useRouter();
   return (
     <div className="flex justify-between items-center py-[50px]">
-      <p
-        className="hover:text-[#ffb703] cursor-pointer"
-        onClick={() => router.push("/")}
-      >
-        @afi-hillman
-      </p>
+      <Link href={"/"}>
+        <p className="hover:text-[#ffb703] cursor-pointer">@afi-hillman</p>
+      </Link>
       <div className="flex items-center">
         {navItems.map((item, index) => (
-          <div
-            key={index}
-            className="py-3 px-5 group cursor-pointer"
-            onClick={() => router.push(item.href)}
-          >
-            <div className="relative flex items-center justify-between gap-1  after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-              <p className="font-semibold">{item.prefix}</p>
-              <p>{item.label}</p>
+          <Link key={index} href={item.href}>
+            <div className="py-3 px-5 group cursor-pointer">
+              <div className="relative flex items-center justify-between gap-1  after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
+                <p className="font-semibold">{item.prefix}</p>
+                <p>{item.label}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
         <div className="flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground">
           <svg

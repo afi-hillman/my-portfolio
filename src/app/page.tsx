@@ -4,10 +4,9 @@ import { projects } from "@/components/projects";
 import Image from "next/image";
 import ContactButton from "@/components/ContactButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Home = () => {
-  const router = useRouter();
   return (
     <div className="flex flex-col items-center gap-8">
       {/* <div className="flex gap-2 items-end">
@@ -89,7 +88,7 @@ const Home = () => {
                 <div>
                   <h4 className="text-primary">INVOKE Solutions Sdn. Bhd.</h4>
                   <h5>Software Engineer</h5>
-                  <p className="text-gray text-xs">July 2023 - Present</p>
+                  <p className="text-grayline text-xs">July 2023 - Present</p>
                 </div>
               </div>
             </div>
@@ -109,7 +108,7 @@ const Home = () => {
                 <div>
                   <h4 className="text-primary">University of Malaya</h4>
                   <h5>Bachelor of Mechanical Engineering</h5>
-                  <p className="text-gray text-xs">
+                  <p className="text-grayline text-xs">
                     September 2018 - July 2022
                   </p>
                 </div>
@@ -127,7 +126,9 @@ const Home = () => {
                 <div>
                   <h4 className="text-primary">University of Malaya</h4>
                   <h5>Foundation in Physical Sciences</h5>
-                  <p className="text-gray text-xs">June 2017 - April 2018</p>
+                  <p className="text-grayline text-xs">
+                    June 2017 - April 2018
+                  </p>
                 </div>
               </div>
             </div>
@@ -167,94 +168,94 @@ const Home = () => {
             Work/Personal Code Campaigns: One line at a time
           </p>
         </div>
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="flex flex-col relative group overflow-hidden rounded-xl border border-ring cursor-pointer"
-            onClick={() => router.push(`/projects/${project.id}`)}
-          >
-            <div>
-              <Image
-                src={project.image}
-                width={1920}
-                height={1080}
-                alt="project image"
-                className="bg-cover rounded-xl opacity-75 group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="p-6 w-full absolute text-white bg-black/80 bottom-0  translate-y-14 group-hover:translate-y-0 transition-all duration-300">
-              <div>
-                <Image
-                  width={48}
-                  height={48}
-                  src={project.logo}
-                  className="w-12 h-12 rounded-md border border-ring group-hover:w-10 group-hover:h-10 duration-300 bg-white"
-                  alt="project logo"
-                />
-                <p>{project.title}</p>
-              </div>
-              <div className="flex gap-2 flex-wrap my-2">
-                {project?.tech?.map((tech, techIndex) => (
-                  <div
-                    key={techIndex}
-                    className="flex gap-2 items-center p-2 rounded-md border border-ring"
-                  >
-                    {tech?.icon}
-                    <p>{tech?.name}</p>
+        <div className="flex flex-col gap-4">
+          {projects.map((project, index) => (
+            <Link key={index} href={`/projects/${project.id}`}>
+              <div className="flex flex-col relative group overflow-hidden rounded-xl border border-ring cursor-pointer">
+                <div>
+                  <Image
+                    src={project.image}
+                    width={1920}
+                    height={1080}
+                    alt="project image"
+                    className="bg-cover rounded-xl opacity-75 group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6 w-full absolute text-white bg-black/80 bottom-0  translate-y-14 group-hover:translate-y-0 transition-all duration-300">
+                  <div>
+                    <Image
+                      width={48}
+                      height={48}
+                      src={project.logo}
+                      className="w-12 h-12 rounded-md border border-ring group-hover:w-10 group-hover:h-10 duration-300 bg-white"
+                      alt="project logo"
+                    />
+                    <p>{project.title}</p>
                   </div>
-                ))}
-              </div>
-              <p className="mb-4 group-hover:mb-2 transition-all duration-300">
-                {project.subtitle}
-              </p>
-              <div className="group">
-                <button className="bg-white text-black rounded-md flex items-center gap-2 px-2 py-1">
-                  <p>Learn more</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeDasharray="20"
-                        strokeDashoffset="20"
-                        d="M3 12h17.5"
+                  <div className="flex gap-2 flex-wrap my-2">
+                    {project?.tech?.map((tech, techIndex) => (
+                      <div
+                        key={techIndex}
+                        className="flex gap-2 items-center p-2 rounded-md border border-ring"
                       >
-                        <animate
-                          fill="freeze"
-                          attributeName="stroke-dashoffset"
-                          dur="0.2s"
-                          values="20;0"
-                        />
-                      </path>
-                      <path
-                        strokeDasharray="12"
-                        strokeDashoffset="12"
-                        d="M21 12l-7 7M21 12l-7 -7"
+                        {tech?.icon}
+                        <p>{tech?.name}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="mb-4 group-hover:mb-2 transition-all duration-300">
+                    {project.subtitle}
+                  </p>
+                  <div className="group">
+                    <button className="bg-white text-black rounded-md flex items-center gap-2 px-2 py-1">
+                      <p>Learn more</p>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
                       >
-                        <animate
-                          fill="freeze"
-                          attributeName="stroke-dashoffset"
-                          begin="0.2s"
-                          dur="0.2s"
-                          values="12;0"
-                        />
-                      </path>
-                    </g>
-                  </svg>
-                </button>
+                        <g
+                          fill="none"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                        >
+                          <path
+                            strokeDasharray="20"
+                            strokeDashoffset="20"
+                            d="M3 12h17.5"
+                          >
+                            <animate
+                              fill="freeze"
+                              attributeName="stroke-dashoffset"
+                              dur="0.2s"
+                              values="20;0"
+                            />
+                          </path>
+                          <path
+                            strokeDasharray="12"
+                            strokeDashoffset="12"
+                            d="M21 12l-7 7M21 12l-7 -7"
+                          >
+                            <animate
+                              fill="freeze"
+                              attributeName="stroke-dashoffset"
+                              begin="0.2s"
+                              dur="0.2s"
+                              values="12;0"
+                            />
+                          </path>
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
