@@ -9,42 +9,6 @@ import Link from "next/link";
 const Home = () => {
   return (
     <div className="flex flex-col items-center gap-8">
-      {/* <div className="flex gap-2 items-end">
-        <Image
-          src={"/gojo_pfp.jpg"}
-          width={1920}
-          height={1080}
-          alt="my picture"
-          className="bg-cover w-20 h-20 rounded-full border border-ring"
-        />
-        <div>
-          <p>What&apos;s up, you can call me Afi</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-          >
-            <path
-              fill="#dd2e44"
-              d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4z"
-            />
-            <path
-              fill="#eee"
-              d="M.555 29h34.891A3.97 3.97 0 0 0 36 27H0c0 .732.211 1.409.555 2M0 23h36v2H0zm0-4h36v2H0zm0-4h36v2H0zm0-4h36v2H0zm.555-4A3.96 3.96 0 0 0 0 9h36c0-.732-.211-1.41-.555-2z"
-            />
-            <path fill="#010066" d="M18 5H4a4 4 0 0 0-4 4v10h18z" />
-            <path
-              fill="#ffcc4d"
-              d="M9.534 17.233a5.234 5.234 0 0 1-.001-10.466c.715 0 1.397.146 2.018.405A5.96 5.96 0 0 0 8 6a6 6 0 0 0 0 12a5.96 5.96 0 0 0 3.551-1.172a5.2 5.2 0 0 1-2.017.405"
-            />
-            <path
-              fill="#ffcc4d"
-              d="m12.922 8.829l.334 1.62l1.003-1.315l-.402 1.604l1.475-.749l-1.059 1.271l1.654-.035l-1.505.686l1.505.686l-1.654-.035l1.059 1.271l-1.475-.749l.402 1.605l-1.003-1.316l-.334 1.621l-.334-1.621l-1.003 1.316l.402-1.605l-1.475.749l1.058-1.271l-1.653.035l1.505-.686l-1.505-.686l1.653.035l-1.058-1.271l1.475.749l-.402-1.604l1.003 1.315z"
-            />
-          </svg>
-        </div>
-      </div> */}
       {/* ABOUT */}
       <div className="w-fit self-start">
         <div className="flex items-end gap-2 relative">
@@ -56,7 +20,7 @@ const Home = () => {
           </div>
         </div>
         <p className="text-[72px]">I&apos;m a software engineer</p>
-        <h3 className=" text-text-subtitle">
+        <h3 className=" text-foreground">
           Fullstack development is the name of the game, and clean code is how I
           play. <br /> I approach every project like a well-planned strategy
           —efficient, scalable, and built to win.
@@ -74,9 +38,9 @@ const Home = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="career">
-            <div className="border border-ring p-4 rounded-xl">
+            <div className="border border-border p-4 rounded-xl">
               <div className="flex gap-4">
-                <div className="border border-ring rounded-full flex justify-center items-center w-12 h-12">
+                <div className="border border-border rounded-full flex justify-center items-center w-12 h-12">
                   {/* <Image
                     src={"/um_logo.png"}
                     width={48}
@@ -88,15 +52,15 @@ const Home = () => {
                 <div>
                   <h4 className="text-primary">INVOKE Solutions Sdn. Bhd.</h4>
                   <h5>Software Engineer</h5>
-                  <p className="text-grayline text-xs">July 2023 - Present</p>
+                  <p className="text-border text-xs">July 2023 - Present</p>
                 </div>
               </div>
             </div>
           </TabsContent>
           <TabsContent value="education">
-            <div className="border border-ring p-4 rounded-xl space-y-2">
+            <div className="border border-border p-4 rounded-xl space-y-2">
               <div className="flex gap-4">
-                <div className="border border-ring rounded-full flex justify-center items-center w-12 h-12">
+                <div className="border border-border rounded-full flex justify-center items-center w-12 h-12">
                   {/* <Image
                     src={"/um_logo.png"}
                     width={48}
@@ -108,13 +72,13 @@ const Home = () => {
                 <div>
                   <h4 className="text-primary">University of Malaya</h4>
                   <h5>Bachelor of Mechanical Engineering</h5>
-                  <p className="text-grayline text-xs">
+                  <p className="text-border text-xs">
                     September 2018 - July 2022
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="border border-ring rounded-full flex justify-center items-center w-12 h-12">
+                <div className="border border-border rounded-full flex justify-center items-center w-12 h-12">
                   {/* <Image
                     src={"/um_logo.png"}
                     width={48}
@@ -126,9 +90,7 @@ const Home = () => {
                 <div>
                   <h4 className="text-primary">University of Malaya</h4>
                   <h5>Foundation in Physical Sciences</h5>
-                  <p className="text-grayline text-xs">
-                    June 2017 - April 2018
-                  </p>
+                  <p className="text-border text-xs">June 2017 - April 2018</p>
                 </div>
               </div>
             </div>
@@ -139,7 +101,7 @@ const Home = () => {
       <div className="space-y-4 w-full">
         <div className="space-y-4">
           <h2>Tech Stack</h2>
-          <p className="text-text-subtitle">
+          <p className="text-border">
             Build Loadout: Some of the tools in my dev arsenal
           </p>
         </div>
@@ -147,7 +109,7 @@ const Home = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-grow gap-2 rounded-xl p-2.5 border border-ring hover:bg-muted duration-300 dark:bg-red-500"
+              className="flex flex-grow gap-2 rounded-xl p-2.5 border border-ring hover:bg-ring duration-300"
             >
               <div className={`p-3 rounded-lg w-fit ${tech.bgColor}`}>
                 {tech.icon}
@@ -164,14 +126,14 @@ const Home = () => {
       <div className="space-y-4 w-full">
         <div className="space-y-4">
           <h2>Projects</h2>
-          <p className="text-text-subtitle">
+          <p className="text-border">
             Work/Personal Code Campaigns: One line at a time
           </p>
         </div>
         <div className="flex flex-col gap-4">
           {projects.map((project, index) => (
             <Link key={index} href={`/projects/${project.id}`}>
-              <div className="flex flex-col relative group overflow-hidden rounded-xl border border-ring cursor-pointer">
+              <div className="flex flex-col relative group overflow-hidden rounded-xl border border-border cursor-pointer">
                 <div>
                   <Image
                     src={project.image}
@@ -187,7 +149,7 @@ const Home = () => {
                       width={48}
                       height={48}
                       src={project.logo}
-                      className="w-12 h-12 rounded-md border border-ring group-hover:w-10 group-hover:h-10 duration-300 bg-white"
+                      className="w-12 h-12 rounded-md border border-border group-hover:w-10 group-hover:h-10 duration-300 bg-white"
                       alt="project logo"
                     />
                     <p>{project.title}</p>
@@ -196,7 +158,7 @@ const Home = () => {
                     {project?.tech?.map((tech, techIndex) => (
                       <div
                         key={techIndex}
-                        className="flex gap-2 items-center p-2 rounded-md border border-ring"
+                        className="flex gap-2 items-center p-2 rounded-md border border-border"
                       >
                         {tech?.icon}
                         <p>{tech?.name}</p>
