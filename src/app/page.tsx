@@ -101,7 +101,7 @@ const Home = () => {
       <div className="space-y-4 w-full">
         <div className="space-y-4">
           <h2>Tech Stack</h2>
-          <p className="text-border">
+          <p className="text-foreground-offset">
             Build Loadout: Some of the tools in my dev arsenal
           </p>
         </div>
@@ -109,7 +109,7 @@ const Home = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-grow gap-2 rounded-xl p-2.5 border border-ring hover:bg-ring duration-300"
+              className="flex flex-grow gap-2 rounded-xl p-2.5 border border-ring hover:bg-muted duration-300"
             >
               <div className={`p-3 rounded-lg w-fit ${tech.bgColor}`}>
                 {tech.icon}
@@ -126,7 +126,7 @@ const Home = () => {
       <div className="space-y-4 w-full">
         <div className="space-y-4">
           <h2>Projects</h2>
-          <p className="text-border">
+          <p className="text-foreground-offset">
             Work/Personal Code Campaigns: One line at a time
           </p>
         </div>
