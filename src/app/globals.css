@@ -39,9 +39,9 @@ body {
     --color-primary: #ff5277;
     --color-primary-offset: #ff2957;
     --color-secondary: #43a9a3;
-    --color-secondary-offset: #ffca00;
+    --color-secondary-offset: #70c7c1;
     --color-muted: #8a8a8a;
-    --color-muted-foreground: #ff2957;
+    --color-muted-foreground: #272727;
   }
 
   [data-theme="third"] {
@@ -54,9 +54,9 @@ body {
     --color-primary: #99c221;
     --color-primary-offset: #6e910a;
     --color-secondary: #e55812;
-    --color-secondary-offset: #ffca00;
+    --color-secondary-offset: #ff7f3e;
     --color-muted: #e8e0d9;
-    --color-muted-foreground: #6e910a;
+    --color-muted-foreground: #4a423c;
   }
 
   body {
