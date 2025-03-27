@@ -7,10 +7,8 @@ import Link from "next/link";
 
 const ProjectDetails = () => {
   const params = useParams();
-  // const projectData = projects.find((proj) => proj.id === Number(params.slug));
   const projectData = projects.find((proj) => proj.url === params.slug);
 
-  console.log(projectData);
   return (
     <div className="flex flex-col gap-10">
       {/* <h2>Project</h2> */}
@@ -61,6 +59,8 @@ const ProjectDetails = () => {
         height={1920}
         width={1080}
         className="w-full rounded-xl"
+        quality={75}
+        priority
       />
       <div>{projectData?.description2}</div>
     </div>

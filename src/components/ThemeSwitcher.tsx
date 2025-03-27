@@ -1,33 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
+const ThemeToggle = ({ open, setOpen }) => {
+  // const [theme, setTheme] = useState(() =>
+  //   typeof window !== "undefined"
+  //     ? localStorage.getItem("theme") || "light"
+  //     : "light"
+  // );
 
-const themes = ["light", "dark", "third"];
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     document.documentElement.setAttribute("data-theme", theme);
+  //     localStorage.setItem("theme", theme);
+  //   }
+  // }, [theme]);
 
-export default function ThemeToggle() {
-  const [theme, setTheme] = useState(() =>
-    typeof window !== "undefined"
-      ? localStorage.getItem("theme") || "light"
-      : "light"
-  );
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-    }
-  }, [theme]);
-
-  const nextTheme = () => {
-    const currentIndex = themes.indexOf(theme);
-    const nextIndex = (currentIndex + 1) % themes.length;
-    setTheme(themes[nextIndex]);
-  };
+  // const nextTheme = () => {
+  //   // const currentIndex = themes.indexOf(theme);
+  //   // const nextIndex = (currentIndex + 1) % themes.length;
+  //   setTheme(themes[nextIndex]);
+  // };
 
   return (
     <div
       className="flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground"
-      onClick={nextTheme}
+      onClick={() => setOpen(!open)}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -43,4 +39,6 @@ export default function ThemeToggle() {
       </svg>
     </div>
   );
-}
+};
+
+export default ThemeToggle;
