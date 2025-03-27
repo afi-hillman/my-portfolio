@@ -5,7 +5,8 @@ export const projects = [
     id: 1,
     url: "adnexioHR",
     title: "adnexioHR",
-    subtitle: "Developed time & attendance module for HR Management System",
+    subtitle:
+      "Developed time & attendance module for HR Management System of INVOKE's in-house product",
     tech: [techFinder("React"), techFinder("Material UI")].filter(Boolean),
     logo: "/adnexio_logo.png",
     image: "/project_adnexio_time_attendance.png",
@@ -61,7 +62,8 @@ export const projects = [
     id: 2,
     url: "decoris",
     title: "decoris",
-    subtitle: "Backend bug fixes & optimizations",
+    subtitle:
+      "Backend bug fixes & optimizations for INVOKE's in-house digital marketing solution product",
     tech: [
       techFinder("Node.js"),
       techFinder("MongoDB"),
@@ -70,6 +72,14 @@ export const projects = [
     ].filter(Boolean),
     logo: "/decoris_logo.svg",
     image: "/project_decoris.png",
+    description: (
+      <div className="flex flex-col gap-8">
+        <p>
+          Worked on bug fixes for the backend of the product for about 4 weeks
+          while learning all the new tech stacks used in the product.
+        </p>
+      </div>
+    ),
     gif: "/sample_gif_2.gif",
   },
   {
@@ -77,10 +87,19 @@ export const projects = [
     url: "parkson-credit",
     link: "https://parksoncredit.com.my/",
     title: "Parkson Credit",
-    subtitle: "Frontend development",
+    subtitle: "Primary frontend developer for Parkson Credit website",
     tech: [techFinder("Next.js"), techFinder("Tailwind")].filter(Boolean),
     logo: "/parkson_credit_logo.png",
     image: "/project_parkson_credit.png",
+    description: (
+      <div className="flex flex-col gap-8">
+        <p>
+          Developed multiple pages for Parkson Credit website such as customer
+          service forms, corporate and consumer enquiry forms, corporate address
+          page, governance page, CSR page, career page and navigation menu.
+        </p>
+      </div>
+    ),
     gif: "/sample_gif.gif",
   },
 ];

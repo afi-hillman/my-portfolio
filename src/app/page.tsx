@@ -15,12 +15,14 @@ const Home = () => {
           <h4 className="text-primary">
             What&apos;s good, you can call me Afi
           </h4>
-          <div className="absolute -bottom-[70%] right-[50%] ">
+          <div className="absolute -bottom-[70%] right-[50%] hidden md:block">
             <ContactButton />
           </div>
         </div>
-        <p className="text-[72px]">I&apos;m a software engineer</p>
-        <h3 className=" text-foreground">
+        <p className="text-[32px] md:text-[72px]">
+          I&apos;m a software engineer
+        </p>
+        <h3 className="text-foreground text-xl md:text-2xl">
           Fullstack development is the name of the game, and clean code is how I
           play. <br /> I approach every project like a well-planned strategy
           —efficient, scalable, and built to win.
@@ -112,7 +114,7 @@ const Home = () => {
             Build Loadout: Some of the tools in my dev arsenal
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-between">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 justify-between h-[360px] md:h-fit overflow-y-scroll md:overflow-hidden">
           {techStack.map((tech, index) => (
             <div
               key={index}
@@ -156,7 +158,7 @@ const Home = () => {
                       width={48}
                       height={48}
                       src={project.logo}
-                      className="w-12 h-12 rounded-md border border-border group-hover:w-10 group-hover:h-10 duration-300 bg-white"
+                      className="w-12 h-12 p-1 rounded-md border border-border group-hover:w-10 group-hover:h-10 duration-300 bg-white"
                       alt="project logo"
                     />
                     <p>{project.title}</p>

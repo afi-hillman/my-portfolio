@@ -55,7 +55,7 @@ const NavMenu = () => {
         <Link href={"/"}>
           <p className="hover:text-primary cursor-pointer">@afi-hillman</p>
         </Link>
-        <div className="flex items-center">
+        <div className="hidden md:flex items-center">
           {navItems.map((item, index) => (
             <Link key={index} href={item.href}>
               <div className="py-3 px-5 group cursor-pointer">
