@@ -40,19 +40,22 @@ const Home = () => {
           <TabsContent value="career">
             <div className="border border-border p-4 rounded-xl">
               <div className="flex gap-4">
-                <div className="border border-border rounded-full flex justify-center items-center w-12 h-12">
-                  {/* <Image
-                    src={"/um_logo.png"}
-                    width={48}
-                    height={48}
-                    alt={"university logo"}
-                    className="w-12 h-12"
-                  /> */}
+                <div className="border border-border rounded-full flex justify-center items-center w-16 h-16 p-2.5">
+                  <Image
+                    src={"/invoke_logo.webp"}
+                    width={50}
+                    height={50}
+                    alt={"invoke logo"}
+                    className="object-contain w-full h-full"
+                    quality={75}
+                  />
                 </div>
                 <div>
                   <h4 className="text-primary">INVOKE Solutions Sdn. Bhd.</h4>
                   <h5>Software Engineer</h5>
-                  <p className="text-border text-xs">July 2023 - Present</p>
+                  <p className="text-foreground-offset text-xs">
+                    July 2023 - Present
+                  </p>
                 </div>
               </div>
             </div>
@@ -60,37 +63,41 @@ const Home = () => {
           <TabsContent value="education">
             <div className="border border-border p-4 rounded-xl space-y-2">
               <div className="flex gap-4">
-                <div className="border border-border rounded-full flex justify-center items-center w-12 h-12">
-                  {/* <Image
+                <div className="border border-border rounded-full flex justify-center items-center w-16 h-16 p-2.5">
+                  <Image
                     src={"/um_logo.png"}
-                    width={48}
-                    height={48}
+                    width={50}
+                    height={50}
                     alt={"university logo"}
-                    className="w-12 h-12"
-                  /> */}
+                    className="object-contain w-full h-full"
+                    quality={75}
+                  />
                 </div>
                 <div>
                   <h4 className="text-primary">University of Malaya</h4>
                   <h5>Bachelor of Mechanical Engineering</h5>
-                  <p className="text-border text-xs">
+                  <p className="text-foreground-offset text-xs">
                     September 2018 - July 2022
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="border border-border rounded-full flex justify-center items-center w-12 h-12">
-                  {/* <Image
+                <div className="border border-border rounded-full flex justify-center items-center w-16 h-16 p-2.5">
+                  <Image
                     src={"/um_logo.png"}
-                    width={48}
-                    height={48}
+                    width={50}
+                    height={50}
                     alt={"university logo"}
-                    className="w-12 h-12"
-                  /> */}
+                    className="object-contain w-full h-full"
+                    quality={75}
+                  />
                 </div>
                 <div>
                   <h4 className="text-primary">University of Malaya</h4>
                   <h5>Foundation in Physical Sciences</h5>
-                  <p className="text-border text-xs">June 2017 - April 2018</p>
+                  <p className="text-foreground-offset text-xs">
+                    June 2017 - April 2018
+                  </p>
                 </div>
               </div>
             </div>
@@ -132,7 +139,7 @@ const Home = () => {
         </div>
         <div className="flex flex-col gap-4">
           {projects.map((project, index) => (
-            <Link key={index} href={`/projects/${project.id}`}>
+            <Link key={index} href={`/projects/${project.url}`}>
               <div className="flex flex-col relative group overflow-hidden rounded-xl border border-border cursor-pointer">
                 <div>
                   <Image

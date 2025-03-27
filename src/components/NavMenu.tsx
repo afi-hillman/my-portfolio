@@ -7,7 +7,7 @@ const NavMenu = () => {
   return (
     <div className="flex justify-between items-center py-[50px]">
       <Link href={"/"}>
-        <p className="hover:text-[#ffb703] cursor-pointer">@afi-hillman</p>
+        <p className="hover:text-primary cursor-pointer">@afi-hillman</p>
       </Link>
       <div className="flex items-center">
         {navItems.map((item, index) => (

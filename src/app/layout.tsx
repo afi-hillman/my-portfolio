@@ -36,5 +36,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// border-dashed border-x-2 border-ring
