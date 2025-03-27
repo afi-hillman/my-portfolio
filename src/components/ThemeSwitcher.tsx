@@ -1,25 +1,11 @@
 "use client";
 
-const ThemeToggle = ({ open, setOpen }) => {
-  // const [theme, setTheme] = useState(() =>
-  //   typeof window !== "undefined"
-  //     ? localStorage.getItem("theme") || "light"
-  //     : "light"
-  // );
+interface ThemeToggleProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     document.documentElement.setAttribute("data-theme", theme);
-  //     localStorage.setItem("theme", theme);
-  //   }
-  // }, [theme]);
-
-  // const nextTheme = () => {
-  //   // const currentIndex = themes.indexOf(theme);
-  //   // const nextIndex = (currentIndex + 1) % themes.length;
-  //   setTheme(themes[nextIndex]);
-  // };
-
+const ThemeToggle: React.FC<ThemeToggleProps> = ({ open, setOpen }) => {
   return (
     <div
       className="flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground"
