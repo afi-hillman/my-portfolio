@@ -15,7 +15,7 @@ body {
 
 @layer base {
   [data-theme="light"] {
-    --color-bg: #fafbf5;
+    --color-bg: #f4f6f0;
     --color-bg-offset: #f2ede9;
     --color-text: #41474c;
     --color-text-offset: #757d84;
