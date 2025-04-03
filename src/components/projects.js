@@ -4,6 +4,7 @@ export const projects = [
   {
     id: 1,
     url: "adnexioHR",
+    link: "https://adnexio.jobs/",
     title: "adnexioHR",
     subtitle:
       "Developed time & attendance module for HR Management System of INVOKE's in-house product",
@@ -15,7 +16,9 @@ export const projects = [
         <p>
           An employee time and attendance feature where it registers the
           user&apos;s clock in and clock out time, along with status and
-          location from where the user accessed it from.
+          location from where the user accessed it from. The project is
+          accessible only to authorized users through a paid subscription model,
+          with no public preview available.
         </p>
         <p>
           The Time and Attendance Module is a sophisticated web application
@@ -56,11 +59,13 @@ export const projects = [
         </p>
       </div>
     ),
-    gif: "/sample_gif.gif",
+    gif: "/time_attendance_preview_1.gif",
+    gif2: "/time_attendance_preview_2.gif",
   },
   {
     id: 2,
     url: "decoris",
+    link: "https://agy.decoris.io/",
     title: "decoris",
     subtitle:
       "Backend bug fixes & optimizations for INVOKE's in-house digital marketing solution product",
@@ -76,11 +81,13 @@ export const projects = [
       <div className="flex flex-col gap-8">
         <p>
           Worked on bug fixes for the backend of the product for about 4 weeks
-          while learning all the new tech stacks used in the product.
+          while learning all the new tech stacks used in the product. The
+          project is accessible only to authorized users through a paid
+          subscription model, with no public preview available.
         </p>
       </div>
     ),
-    gif: "/sample_gif_2.gif",
+    gif: "/decoris_preview_1.gif",
   },
   {
     id: 3,
@@ -100,6 +107,6 @@ export const projects = [
         </p>
       </div>
     ),
-    gif: "/sample_gif.gif",
+    gif: "/parkson_preview_1.gif",
   },
 ];

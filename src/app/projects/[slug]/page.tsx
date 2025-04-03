@@ -58,11 +58,22 @@ const ProjectDetails = () => {
         alt="gif of project"
         height={1920}
         width={1080}
-        className="w-full rounded-xl"
+        className="w-full h-full rounded-xl"
         quality={75}
         priority
       />
-      <div>{projectData?.description2}</div>
+      {projectData?.description2 && <div>{projectData?.description2}</div>}
+      {projectData?.gif2 && (
+        <Image
+          src={projectData?.gif2 || ""}
+          alt="gif of project"
+          height={1920}
+          width={1080}
+          className="w-full h-full rounded-xl"
+          quality={75}
+          priority
+        />
+      )}
     </div>
   );
 };
