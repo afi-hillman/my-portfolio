@@ -48,8 +48,10 @@ const HeroMap = () => {
   useEffect(() => {
     if (theme === "light") {
       setMapStyle("basic-v2");
-    } else {
+    } else if (theme === "dark") {
       setMapStyle("basic-v2-dark");
+    } else {
+      setMapStyle("basic-v2");
     }
   }, [theme]);
 

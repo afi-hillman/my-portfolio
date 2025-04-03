@@ -6,31 +6,30 @@ import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import HeroMap from "@/components/HeroMap";
+import ContactButton from "@/components/ContactButton";
 
 const Home = () => {
   return (
     <div className="flex flex-col items-center gap-8">
-      {/* ABOUT */}
-      {/* <div className="w-fit self-start">
-        <div className="flex items-end gap-2 relative">
-          <h4 className="text-primary">
-            What&apos;s good, you can call me Afi
-          </h4>
-          <div className="absolute -bottom-[70%] right-[50%] hidden md:block">
+      {/* HERO */}
+      <div className="w-full flex justify-between items-center gap-4">
+        <div className="w-1/2 border border-border rounded-xl">
+          <HeroMap />
+        </div>
+        <div className="w-1/2 p-8 space-y-4 border border-border rounded-xl flex flex-col justify-between self-stretch">
+          {/* <h5 className="text-foreground text-xl md:text-2xl">
+            Fullstack development is the name of the game, and clean code is how
+            I play. <br /> I approach every project like a well-planned strategy
+            —efficient, scalable, and built to win.
+          </h5> */}
+          <h5 className="text-foreground text-xl md:text-2xl">
+            Hey, you can call me Afi. Software Engineer with almost 2 years of
+            experience, current work revolves around React frontend development.
+          </h5>
+          <div className="flex items-center justify-center w-full">
             <ContactButton />
           </div>
         </div>
-        <p className="text-[32px] md:text-[72px]">
-          I&apos;m a software engineer
-        </p>
-        <h3 className="text-foreground text-xl md:text-2xl">
-          Fullstack development is the name of the game, and clean code is how I
-          play. <br /> I approach every project like a well-planned strategy
-          —efficient, scalable, and built to win.
-        </h3>
-      </div> */}
-      <div className="w-full">
-        <HeroMap />
       </div>
       {/* EXPERIENCE */}
       <div className="space-y-4 w-full">
