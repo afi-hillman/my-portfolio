@@ -18,7 +18,7 @@ const NavMenu = () => {
     <>
       <div
         className={`
-          w-full flex justify-around items-center gap-10 px-10
+          w-full flex justify-around items-center md:gap-10 gap-2 md:px-10
           transition-all duration-300 ease-in-out 
           overflow-hidden
           ${open ? "h-[200px]" : "h-0"}
@@ -72,18 +72,36 @@ const NavMenu = () => {
             </svg>
           </div>
         </Link>
-        <div className="hidden md:flex items-center">
-          {navItems.map((item, index) => (
-            <Link key={index} href={item.href}>
-              <div className="py-3 px-5 group cursor-pointer">
-                <div className="relative flex items-center justify-between gap-1  after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-                  <p className="font-semibold">{item.prefix}</p>
-                  <p>{item.label}</p>
+        <div className="flex items-center">
+          <div className="hidden md:flex items-center">
+            {navItems.map((item, index) => (
+              <Link key={index} href={item.href}>
+                <div className="py-3 px-5 group cursor-pointer">
+                  <div className="relative flex items-center justify-between gap-1  after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
+                    <p className="font-semibold">{item.prefix}</p>
+                    <p>{item.label}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
           <ThemeSwitcher open={open} setOpen={setOpen} />
+          <div
+            className="md:hidden flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground border border-ring hover:bg-muted duration-300"
+            // onClick={() => setOpen(!open)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2em"
+              height="2em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </>
