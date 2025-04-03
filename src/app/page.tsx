@@ -2,7 +2,6 @@
 import { techStack } from "@/components/techStack";
 import { projects } from "@/components/projects";
 import Image from "next/image";
-// import ContactButton from "@/components/ContactButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import HeroMap from "@/components/HeroMap";
@@ -23,8 +22,20 @@ const Home = () => {
             —efficient, scalable, and built to win.
           </h5> */}
           <h5 className="text-foreground text-xl md:text-2xl">
-            Hey, you can call me Afi. Software Engineer with almost 2 years of
-            experience, current work revolves around React frontend development.
+            Hey, I&apos;m Afi. Software engineer with{" "}
+            <span className="relative group inline-block">
+              <span className="z-30 relative">2 years</span>
+              <div className="absolute bottom-0 left-0 w-full h-[0.6em] group-hover:bg-secondary transition-all duration-500 scale-x-0 group-hover:scale-x-100 transform origin-left z-20" />
+              <div className="absolute bottom-0 left-0 w-full h-[0.6em] bg-muted transition-all duration-500 scale-x-100 group-hover:scale-x-100 transform origin-left z-10" />
+            </span>{" "}
+            of experience, work revolves around delivering exceptional user
+            interactivity through{" "}
+            <span className="relative group inline-block">
+              <span className="z-30 relative">React</span>
+              <div className="absolute bottom-0 left-0 w-full h-[0.6em] group-hover:bg-secondary transition-all duration-500 scale-x-0 group-hover:scale-x-100 transform origin-left z-20" />
+              <div className="absolute bottom-0 left-0 w-full h-[0.6em] bg-muted transition-all duration-500 scale-x-100 group-hover:scale-x-100 transform origin-left z-10" />
+            </span>{" "}
+            frontend development.
           </h5>
           <div className="flex items-center justify-center w-full">
             <ContactButton />
