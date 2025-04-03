@@ -1,26 +1,17 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { useTheme } from "@/context/ThemeContext";
 
 const NavMenu = () => {
   const [open, setOpen] = useState(false);
   const themes = [
     { name: "light", colors: ["#99c221", "#fafbf5", "#41474c", "#e55812"] },
     { name: "dark", colors: ["#ff5277", "#0e141b", "#ffffff", "#43a9a3"] },
+    { name: "earth", colors: ["#5a7e46", "#f5f1e6", "#2c2418", "#a65e2e"] },
   ];
-  const [theme, setTheme] = useState(() =>
-    typeof window !== "undefined"
-      ? localStorage.getItem("theme") || "light"
-      : "light"
-  );
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-    }
-  }, [theme]);
+  const { setTheme } = useTheme();
 
   return (
     <>

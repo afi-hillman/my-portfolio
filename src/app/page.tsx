@@ -2,15 +2,16 @@
 import { techStack } from "@/components/techStack";
 import { projects } from "@/components/projects";
 import Image from "next/image";
-import ContactButton from "@/components/ContactButton";
+// import ContactButton from "@/components/ContactButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
+import HeroMap from "@/components/HeroMap";
 
 const Home = () => {
   return (
     <div className="flex flex-col items-center gap-8">
       {/* ABOUT */}
-      <div className="w-fit self-start">
+      {/* <div className="w-fit self-start">
         <div className="flex items-end gap-2 relative">
           <h4 className="text-primary">
             What&apos;s good, you can call me Afi
@@ -27,6 +28,9 @@ const Home = () => {
           play. <br /> I approach every project like a well-planned strategy
           —efficient, scalable, and built to win.
         </h3>
+      </div> */}
+      <div className="w-full">
+        <HeroMap />
       </div>
       {/* EXPERIENCE */}
       <div className="space-y-4 w-full">

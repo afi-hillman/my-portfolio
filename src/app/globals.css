@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   @apply bg-background text-foreground;
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 @layer base {
   * {
@@ -42,6 +42,21 @@ body {
     --color-secondary-offset: #70c7c1;
     --color-muted: #8a8a8a;
     --color-muted-foreground: #272727;
+  }
+
+  [data-theme="earth"] {
+    --color-bg: #f5f1e6;
+    --color-bg-offset: #e9e2d0;
+    --color-text: #2c2418;
+    --color-text-offset: #5e4d36;
+    --color-ring: #d1c5a5;
+    --color-border: #c7b999;
+    --color-primary: #5a7e46;
+    --color-primary-offset: #486a38;
+    --color-secondary: #a65e2e;
+    --color-secondary-offset: #c27945;
+    --color-muted: #cfc2ac;
+    --color-muted-foreground: #3e3524;
   }
 
   /* [data-theme="baby-blue"] {
