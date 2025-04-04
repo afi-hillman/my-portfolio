@@ -22,9 +22,9 @@ const ProjectDetails = () => {
           <path
             fill="none"
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="m15 6l-6 6l6 6"
           />
         </svg>
@@ -32,7 +32,7 @@ const ProjectDetails = () => {
           Back to home
         </p>
       </Link>
-      <div className="rounded-xl border border-grayline p-5">
+      <div className="rounded-xl border border-grayline p-5 bg-background-offset">
         <div className="flex justify-between w-full">
           <h3>{projectData?.title}</h3>
           {projectData?.link && (
@@ -63,7 +63,7 @@ const ProjectDetails = () => {
           {projectData?.tech?.map((tech, techIndex) => (
             <div
               key={techIndex}
-              className="flex gap-2 items-center p-2 rounded-md border border-grayline"
+              className="flex gap-2 items-center p-2 rounded-md border border-grayline bg-background"
             >
               {tech?.icon}
               <p>{tech?.name}</p>

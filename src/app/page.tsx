@@ -22,7 +22,7 @@ const Home = () => {
             —efficient, scalable, and built to win.
           </h5> */}
           <h5 className="text-foreground text-xl md:text-2xl">
-            Hey, I&apos;m Afi. Software engineer with{" "}
+            Hey, I&apos;m Afi. Software engineer with about{" "}
             <span className="relative group inline-block">
               <span className="z-30 relative">2 years</span>
               <div className="absolute bottom-0 left-0 w-full h-[0.6em] group-hover:bg-secondary transition-all duration-500 scale-x-0 group-hover:scale-x-100 transform origin-left z-20" />

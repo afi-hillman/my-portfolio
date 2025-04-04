@@ -1,10 +1,50 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 
 const Footer = () => {
+  const [easterEgg, setEasterEgg] = useState(false);
   return (
     <div className="border-t border-[#E5E5E5] py-8 mt-20">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8 flex justify-between items-center">
-        <p className="text-sm">© 2025 Afi Hillman | Based in Malaysia</p>
+        <div className="text-sm flex items-center gap-2">
+          <p>© 2025 Afi Hillman |</p>
+          {easterEgg ? (
+            <div
+              onMouseLeave={() => setEasterEgg(false)}
+              className="flex items-center gap-2"
+            >
+              <p>Malaysia Boleh!</p>{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 36 36"
+              >
+                <path
+                  fill="#dd2e44"
+                  d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4z"
+                />
+                <path
+                  fill="#eee"
+                  d="M.555 29h34.891A3.97 3.97 0 0 0 36 27H0c0 .732.211 1.409.555 2M0 23h36v2H0zm0-4h36v2H0zm0-4h36v2H0zm0-4h36v2H0zm.555-4A3.96 3.96 0 0 0 0 9h36c0-.732-.211-1.41-.555-2z"
+                />
+                <path fill="#010066" d="M18 5H4a4 4 0 0 0-4 4v10h18z" />
+                <path
+                  fill="#ffcc4d"
+                  d="M9.534 17.233a5.234 5.234 0 0 1-.001-10.466c.715 0 1.397.146 2.018.405A5.96 5.96 0 0 0 8 6a6 6 0 0 0 0 12a5.96 5.96 0 0 0 3.551-1.172a5.2 5.2 0 0 1-2.017.405"
+                />
+                <path
+                  fill="#ffcc4d"
+                  d="m12.922 8.829l.334 1.62l1.003-1.315l-.402 1.604l1.475-.749l-1.059 1.271l1.654-.035l-1.505.686l1.505.686l-1.654-.035l1.059 1.271l-1.475-.749l.402 1.605l-1.003-1.316l-.334 1.621l-.334-1.621l-1.003 1.316l.402-1.605l-1.475.749l1.058-1.271l-1.653.035l1.505-.686l-1.505-.686l1.653.035l-1.058-1.271l1.475.749l-.402-1.604l1.003 1.315z"
+                />
+              </svg>
+            </div>
+          ) : (
+            <div onMouseEnter={() => setEasterEgg(true)}>
+              <p>Based in Malaysia</p>
+            </div>
+          )}
+        </div>
         <div className="flex items-center gap-2">
           {/* <a
             className="cursor-pointer hover:-translate-y-2 transition-all duration-300"

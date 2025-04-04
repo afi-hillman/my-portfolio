@@ -33,8 +33,8 @@ const HeroMap = () => {
   const handleMapLoad = () => {
     if (mapRef.current) {
       mapRef.current.flyTo({
-        center: [101.55508781886314, 3.218514155214521],
-        zoom: 16,
+        center: [101.7122, 3.1573],
+        zoom: 5,
         essential: true,
         speed: 2,
         curve: 1,
@@ -60,15 +60,15 @@ const HeroMap = () => {
       key={mapStyle}
       ref={mapRef}
       initialViewState={{
-        longitude: 101.55508781886314,
-        latitude: 3.218514155214521,
+        longitude: 101.7122,
+        latitude: 3.1573,
         zoom: 8,
       }}
       onLoad={handleMapLoad}
       style={{ width: "100%", height: 300, borderRadius: "12px" }}
       mapStyle={`https://api.maptiler.com/maps/${mapStyle}/style.json?key=${process.env.NEXT_PUBLIC_MAPTILER_API_KEY}`}
     >
-      <Marker longitude={101.55508781886314} latitude={3.218514155214521}>
+      <Marker longitude={101.7122} latitude={3.1573}>
         <button className="relative">
           <div className="w-3 h-3 bg-primary rounded-full absolute top-0 left-0" />
           <div className="w-6 h-6 bg-primary opacity-50 rounded-full animate-ping absolute top-[-6px] left-[-6px]" />
