@@ -19,12 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body
-        className={`${inter.className} antialiased max-w-screen-xl mx-auto px-4 md:px-8`}
-      >
+      <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
           <NavMenu />
-          {children}
+          <div className="max-w-screen-xl mx-auto px-4 md:px-8">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>

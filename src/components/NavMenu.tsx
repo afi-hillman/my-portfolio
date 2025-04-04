@@ -15,12 +15,12 @@ const NavMenu = () => {
   const { setTheme } = useTheme();
 
   return (
-    <>
+    <div className="border-b border-border mx-auto px-4 md:px-8 mb-10">
       <div
         className={`
           w-full transition-all duration-300 ease-in-out 
           overflow-hidden
-          ${open ? "h-[200px]" : "h-0"}
+          ${open ? "h-[130px]" : "h-0"}
         `}
       >
         <div className="flex items-center justify-end mt-2">
@@ -42,7 +42,7 @@ const NavMenu = () => {
           {themes.map((item, index) => (
             <div
               key={index}
-              className="rounded-md border border-border w-full h-40  cursor-pointer group hover:bg-muted transition-all duration-300 ease-in-out flex flex-col items-center justify-center gap-4"
+              className="rounded-md border border-border w-full h-fit py-4 cursor-pointer group hover:bg-muted transition-all duration-300 ease-in-out flex flex-col items-center justify-center gap-4"
               onClick={() => setTheme(item.name)}
             >
               <p>{item.name}</p>
@@ -59,7 +59,7 @@ const NavMenu = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-between items-center py-[50px]">
+      <div className="flex justify-between items-center py-[1em]">
         <Link href={"/"} className="flex items-center gap-1 group">
           <div className="flex items-center justify-center w-12 h-12 rounded-full border border-ring mr-2 overflow-hidden">
             <Image
@@ -91,13 +91,41 @@ const NavMenu = () => {
         <div className="flex items-center">
           <div className="hidden md:flex items-center">
             {navItems.map((item, index) => (
-              <Link key={index} href={item.href}>
-                <div className="py-3 px-5 group cursor-pointer">
-                  <div className="relative flex items-center justify-between gap-1  after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
+              <Link
+                key={index}
+                href={item.disabled ? "#" : item.href}
+                onClick={(e) => item.disabled && e.preventDefault()}
+                className={item.disabled ? "pointer-events-none relative" : ""}
+              >
+                <div
+                  className={`py-3 px-5 group cursor-${
+                    item.disabled ? "not-allowed" : "pointer"
+                  }`}
+                >
+                  <div
+                    className={`
+          relative flex items-center justify-between gap-1
+          ${item.disabled ? "text-gray-400" : ""}
+          ${
+            !item.disabled
+              ? "after:absolute after:bottom-[-8px] after:left-0 after:h-1 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
+              : ""
+          }
+        `}
+                  >
                     <p className="font-semibold">{item.prefix}</p>
                     <p>{item.label}</p>
                   </div>
                 </div>
+                {item.disabled && (
+                  <Image
+                    src={"/work-in-progress.png"}
+                    width={32}
+                    height={32}
+                    alt="work-in-progress icon"
+                    className="absolute -top-3 right-0 rotate-12"
+                  />
+                )}
               </Link>
             ))}
           </div>
@@ -120,15 +148,20 @@ const NavMenu = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default NavMenu;
 
 const navItems = [
-  { prefix: "01", label: "home", href: "/" },
-  { prefix: "02", label: "experience", href: "/experience" },
-  { prefix: "03", label: "about", href: "/about" },
-  { prefix: "04", label: "blog", href: "/blog" },
+  { prefix: "01", label: "home", href: "/", disabled: false },
+  { prefix: "02", label: "about", href: "/about", disabled: true },
+  {
+    prefix: "03",
+    label: "achievements",
+    href: "/achievements",
+    disabled: true,
+  },
+  { prefix: "04", label: "newsletter", href: "/newsletter", disabled: true },
 ];
