@@ -131,7 +131,7 @@ const NavMenu = () => {
           </div>
           <ThemeSwitcher open={open} setOpen={setOpen} />
           <div
-            className="md:hidden flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground border border-ring hover:bg-muted duration-300"
+            className="md:hidden flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground border border-border hover:bg-muted duration-300"
             // onClick={() => setOpen(!open)}
           >
             <svg

@@ -74,7 +74,7 @@ const HeroMap = () => {
           <div className="w-6 h-6 bg-primary opacity-50 rounded-full animate-ping absolute top-[-6px] left-[-6px]" />
         </button>
       </Marker>
-      <div className="absolute top-2 right-2 bg-background-offset text-foreground text-lg p-2 rounded-xl flex gap-1 font-mono border border-ring">
+      <div className="absolute top-2 right-2 bg-background-offset text-foreground text-lg p-2 rounded-xl flex gap-1 font-mono border border-muted">
         <p>{hours}</p>
         <span className="animate-pulse inline-block">:</span>
         <p>{minutes}</p>

@@ -8,7 +8,7 @@ interface ThemeToggleProps {
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ open, setOpen }) => {
   return (
     <div
-      className="flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground border border-ring hover:bg-muted duration-300"
+      className="flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground border border-border hover:bg-muted duration-300"
       onClick={() => setOpen(!open)}
     >
       <svg

@@ -10,6 +10,14 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Afi Hillman - Portfolio",
   description: "software engineer portfolio",
+  icons: {
+    icon: [
+      { url: "/gojo_pfp.ico" },
+      { url: "/gojo_pfp.jpg", sizes: "16x16", type: "image/jpg" },
+      { url: "/gojo_pfp.jpg", sizes: "32x32", type: "image/jpg" },
+    ],
+    apple: [{ url: "/gojo_pfp.jpg" }],
+  },
 };
 
 export default function RootLayout({
