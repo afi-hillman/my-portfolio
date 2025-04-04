@@ -62,7 +62,7 @@ const HeroMap = () => {
       initialViewState={{
         longitude: 101.7122,
         latitude: 3.1573,
-        zoom: 8,
+        zoom: 2,
       }}
       onLoad={handleMapLoad}
       style={{ width: "100%", height: 300, borderRadius: "12px" }}

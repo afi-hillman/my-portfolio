@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useTheme } from "@/context/ThemeContext";
 import Image from "next/image";
+import MobileNavMenu from "./MobileNavMenu";
 
 const NavMenu = () => {
-  const [open, setOpen] = useState(false);
+  const [openTheme, setOpenTheme] = useState(false);
   const themes = [
     { name: "earth", colors: ["#5a7e46", "#f5f1e6", "#2c2418", "#a65e2e"] },
     { name: "light", colors: ["#99c221", "#fafbf5", "#41474c", "#e55812"] },
@@ -20,7 +21,7 @@ const NavMenu = () => {
         className={`
           w-full transition-all duration-300 ease-in-out 
           overflow-hidden
-          ${open ? "h-[130px]" : "h-0"}
+          ${openTheme ? "h-[130px]" : "h-0"}
         `}
       >
         <div className="flex items-center justify-end mt-2">
@@ -30,7 +31,7 @@ const NavMenu = () => {
             height="1.5em"
             viewBox="0 0 24 24"
             className="cursor-pointer"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpenTheme(false)}
           >
             <path
               fill="currentColor"
@@ -129,24 +130,9 @@ const NavMenu = () => {
               </Link>
             ))}
           </div>
-          <ThemeSwitcher open={open} setOpen={setOpen} />
+          <ThemeSwitcher open={openTheme} setOpen={setOpenTheme} />
           {/* hide mobile nav, waiting to use framer motion to animate it */}
-          {/* <div
-            className="md:hidden flex items-center justify-center w-12 h-12 ml-4 rounded-full bg-background-offset text-primary-foreground border border-border hover:bg-muted duration-300"
-            // onClick={() => setOpen(!open)}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="2em"
-              height="2em"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"
-              />
-            </svg>
-          </div> */}
+          <MobileNavMenu />
         </div>
       </div>
     </div>
