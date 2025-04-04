@@ -10,8 +10,28 @@ const ProjectDetails = () => {
   const projectData = projects.find((proj) => proj.url === params.slug);
 
   return (
-    <div className="flex flex-col gap-10">
-      {/* <h2>Project</h2> */}
+    <div className="flex flex-col gap-6">
+      <Link href={"/"} className="flex items-center gap-1 group">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          className="group-hover:-translate-x-1 transition-all duration-300 ease-in-out"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m15 6l-6 6l6 6"
+          />
+        </svg>
+        <p className="group-hover:translate-x-1 group-hover:text-primary transition-all duration-300 ease-in-out ">
+          Back to home
+        </p>
+      </Link>
       <div className="rounded-xl border border-grayline p-5">
         <div className="flex justify-between w-full">
           <h3>{projectData?.title}</h3>
