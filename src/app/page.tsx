@@ -6,8 +6,41 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import HeroMap from "@/components/HeroMap";
 import ContactButton from "@/components/ContactButton";
+import { motion } from "framer-motion";
 
 const Home = () => {
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      x: -50,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="flex flex-col items-center gap-8">
       {/* HERO */}
@@ -15,31 +48,39 @@ const Home = () => {
         <div className="w-full md:w-1/2 border border-border rounded-xl">
           <HeroMap />
         </div>
-        <div className="w-full md:w-1/2 p-8 space-y-4 border border-border rounded-xl flex flex-col justify-between self-stretch">
-          {/* <h5 className="text-foreground text-xl md:text-2xl">
-            Fullstack development is the name of the game, and clean code is how
-            I play. <br /> I approach every project like a well-planned strategy
-            —efficient, scalable, and built to win.
-          </h5> */}
-          <h5 className="text-foreground text-xl md:text-2xl">
-            Hey, I&apos;m Afi. Software engineer with about{" "}
-            <span className="relative group inline-block">
-              <span className="z-30 relative">2 years</span>
-              <div className="absolute bottom-0 left-0 w-full h-[0.6em] group-hover:bg-secondary transition-all duration-500 scale-x-0 group-hover:scale-x-100 transform origin-left z-20" />
-              <div className="absolute bottom-0 left-0 w-full h-[0.6em] bg-muted transition-all duration-500 scale-x-100 group-hover:scale-x-100 transform origin-left z-10" />
-            </span>{" "}
-            of experience, work revolves around delivering exceptional user
-            interactivity through{" "}
-            <span className="relative group inline-block">
-              <span className="z-30 relative">React</span>
-              <div className="absolute bottom-0 left-0 w-full h-[0.6em] group-hover:bg-secondary transition-all duration-500 scale-x-0 group-hover:scale-x-100 transform origin-left z-20" />
-              <div className="absolute bottom-0 left-0 w-full h-[0.6em] bg-muted transition-all duration-500 scale-x-100 group-hover:scale-x-100 transform origin-left z-10" />
-            </span>{" "}
-            frontend development.
-          </h5>
-          <div className="flex items-center justify-center w-full">
-            <ContactButton />
-          </div>
+        <div className="w-full md:w-1/2 border border-border rounded-xl">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className="p-8 space-y-4 flex flex-col justify-between self-stretch"
+          >
+            <motion.h5
+              className="text-foreground text-xl md:text-2xl"
+              variants={itemVariants}
+            >
+              Hey, I&apos;m Afi. Junior software engineer with a passion for{" "}
+              <span className="relative group inline-block">
+                <span className="z-30 relative">smooth experiences</span>
+                <div className="absolute bottom-0 left-0 w-full h-[0.6em] group-hover:bg-secondary transition-all duration-500 scale-x-0 group-hover:scale-x-100 transform origin-left z-20" />
+                <div className="absolute bottom-0 left-0 w-full h-[0.6em] bg-muted transition-all duration-500 scale-x-100 group-hover:scale-x-100 transform origin-left z-10" />
+              </span>
+              , work revolves around delivering exceptional user interactivity
+              through{" "}
+              <span className="relative group inline-block">
+                <span className="z-30 relative">React</span>
+                <div className="absolute bottom-0 left-0 w-full h-[0.6em] group-hover:bg-secondary transition-all duration-500 scale-x-0 group-hover:scale-x-100 transform origin-left z-20" />
+                <div className="absolute bottom-0 left-0 w-full h-[0.6em] bg-muted transition-all duration-500 scale-x-100 group-hover:scale-x-100 transform origin-left z-10" />
+              </span>{" "}
+              frontend development.
+            </motion.h5>
+            <motion.div
+              className="flex items-center justify-center w-full"
+              variants={itemVariants}
+            >
+              <ContactButton />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
       {/* EXPERIENCE */}
@@ -67,7 +108,7 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="text-primary">INVOKE Solutions Sdn. Bhd.</h4>
+                  <h4 className="text-primary">INVOKE, Kuala Lumpur</h4>
                   <h5>Software Engineer</h5>
                   <p className="text-foreground-offset text-xs">
                     July 2023 - Present

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useTheme } from "@/context/ThemeContext";
 import Image from "next/image";
-import MobileNavMenu from "./MobileNavMenu";
+// import MobileNavMenu from "./MobileNavMenu";
 
 const NavMenu = () => {
   const [openTheme, setOpenTheme] = useState(false);
@@ -132,7 +132,7 @@ const NavMenu = () => {
           </div>
           <ThemeSwitcher open={openTheme} setOpen={setOpenTheme} />
           {/* hide mobile nav, waiting to use framer motion to animate it */}
-          <MobileNavMenu />
+          {/* <MobileNavMenu /> */}
         </div>
       </div>
     </div>

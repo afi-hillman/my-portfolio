@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
           ) : (
             <div onMouseEnter={() => setEasterEgg(true)}>
-              <p>Based in Malaysia</p>
+              <p>Based in Kuala Lumpur</p>
             </div>
           )}
         </div>
