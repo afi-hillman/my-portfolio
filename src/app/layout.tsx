@@ -4,6 +4,7 @@ import "./globals.css";
 import NavMenu from "@/components/NavMenu";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
+import MovingDotsWrapper from "@/components/MovingDotsWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,11 +28,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased relative min-h-screen`}>
+        <MovingDotsWrapper className="h-full w-full" />
         <ThemeProvider>
-          <NavMenu />
-          <div className="max-w-screen-xl mx-auto px-4 md:px-8">{children}</div>
-          <Footer />
+          <div className="relative z-10">
+            <NavMenu />
+            <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+              {children}
+            </div>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
