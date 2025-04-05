@@ -8,7 +8,11 @@ export const projects = [
     title: "adnexioHR",
     subtitle:
       "Developed time & attendance module for HR Management System of INVOKE's in-house product",
-    tech: [techFinder("React"), techFinder("Material UI")].filter(Boolean),
+    tech: [
+      techFinder("React"),
+      techFinder("Material UI"),
+      techFinder("Tailwind"),
+    ].filter(Boolean),
     logo: "/adnexio_logo.png",
     image: "/project_adnexio_time_attendance.png",
     description: (
@@ -85,6 +89,14 @@ export const projects = [
           project is accessible only to authorized users through a paid
           subscription model, with no public preview available.
         </p>
+        <p>
+          After our primary node.js backend developer left the company, I took
+          over to fix the bugs that were present in the in-house product. Even
+          though my specialty leans towards frontend development, I always liked
+          challenges and decided to take on this project. The end goal for my
+          career path is to become a full stack developer, and this presented
+          the opportunity for me to work towards that goal.
+        </p>
       </div>
     ),
     gif: "/decoris_preview_1.gif",
@@ -94,8 +106,14 @@ export const projects = [
     url: "parkson-credit",
     link: "https://parksoncredit.com.my/",
     title: "Parkson Credit",
-    subtitle: "Primary frontend developer for Parkson Credit website",
-    tech: [techFinder("Next.js"), techFinder("Tailwind")].filter(Boolean),
+    subtitle:
+      "A corporate website built with Next.js, Tailwind, and Directus for fully editable content management.",
+    tech: [
+      techFinder("Next.js"),
+      techFinder("Tailwind"),
+      techFinder("Directus"),
+      techFinder("Shadcn"),
+    ].filter(Boolean),
     logo: "/parkson_credit_logo.png",
     image: "/project_parkson_credit.png",
     description: (
@@ -104,6 +122,12 @@ export const projects = [
           Developed multiple pages for Parkson Credit website such as customer
           service forms, corporate and consumer enquiry forms, corporate address
           page, governance page, CSR page, career page and navigation menu.
+        </p>
+        <p>
+          Project is built with Next.js, while using Tailwind CSS for styling
+          and shadcn UI for the base components. This project also implements
+          Directus for content management, as the client wanted the contents of
+          the website to be editable by their own staff members.
         </p>
       </div>
     ),

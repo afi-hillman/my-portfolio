@@ -166,7 +166,8 @@ const Home = () => {
         <div className="space-y-4">
           <h2>Tech Stack</h2>
           <p className="text-foreground-offset">
-            Build Loadout: Some of the tools in my dev arsenal
+            Build Loadout: <span className="underline">Some</span> of the tools
+            in my dev arsenal (not all!)
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 justify-between h-[360px] md:h-fit overflow-y-scroll md:overflow-hidden">
