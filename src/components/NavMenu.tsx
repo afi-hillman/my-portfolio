@@ -64,7 +64,7 @@ const NavMenu = () => {
         <Link href={"/"} className="flex items-center gap-1 group">
           <div className="flex items-center justify-center w-12 h-12 rounded-full border border-ring mr-2 overflow-hidden">
             <Image
-              src={"/self_picture.png"}
+              src={"/self_picture.jfif"}
               alt="logo"
               width={120}
               height={120}

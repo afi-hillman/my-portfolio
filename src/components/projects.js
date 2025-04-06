@@ -8,11 +8,7 @@ export const projects = [
     title: "adnexioHR",
     subtitle:
       "Developed time & attendance module for HR Management System of INVOKE's in-house product",
-    tech: [
-      techFinder("React"),
-      techFinder("Material UI"),
-      techFinder("Tailwind"),
-    ].filter(Boolean),
+    tech: [techFinder("React"), techFinder("Material UI")].filter(Boolean),
     logo: "/adnexio_logo.png",
     image: "/project_adnexio_time_attendance.png",
     description: (
@@ -107,7 +103,7 @@ export const projects = [
     link: "https://parksoncredit.com.my/",
     title: "Parkson Credit",
     subtitle:
-      "A corporate website built with Next.js, Tailwind, and Directus for fully editable content management.",
+      "A corporate website built with Next.js, Tailwind, and Directus for fully editable content management",
     tech: [
       techFinder("Next.js"),
       techFinder("Tailwind"),
