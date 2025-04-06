@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/techStack.js", "src/utils/techFinder.js", "src/components/projects.js", "src/app/projects/[slug]/page.tsx", "src/context/ThemeContext.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/techStack.js", "src/utils/techFinder.js", "src/components/projects.js", "src/app/projects/[slug]/page.tsx", "src/context/ThemeContext.jsx", "src/components/RenderProjects.jsx"],
   "exclude": ["node_modules"]
 }
