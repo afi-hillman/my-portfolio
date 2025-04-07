@@ -47,7 +47,7 @@ const Home = () => {
         <div className="w-full md:w-1/3 border border-border rounded-xl">
           <HeroMap />
         </div>
-        <div className="w-full md:w-2/3 border border-border rounded-xl">
+        <div className="w-full md:w-2/3 border border-border rounded-xl bg-background-offset">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -94,9 +94,9 @@ const Home = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="career">
-            <div className="border border-border p-4 rounded-xl">
+            <div className="border border-border p-4 rounded-xl bg-background-offset">
               <div className="flex gap-4">
-                <div className="border border-border rounded-full flex justify-center items-center w-16 h-16 p-2.5">
+                <div className="border border-border rounded-full bg-background flex justify-center items-center w-16 h-16 p-2.5">
                   <Image
                     src={"/invoke_logo.webp"}
                     width={50}
@@ -117,9 +117,9 @@ const Home = () => {
             </div>
           </TabsContent>
           <TabsContent value="education">
-            <div className="border border-border p-4 rounded-xl space-y-2">
+            <div className="border border-border p-4 rounded-xl space-y-2 bg-background-offset">
               <div className="flex gap-4">
-                <div className="border border-border rounded-full flex justify-center items-center w-16 h-16 p-2.5">
+                <div className="border border-border rounded-full bg-background flex justify-center items-center w-16 h-16 p-2.5">
                   <Image
                     src={"/um_logo.png"}
                     width={50}
@@ -138,7 +138,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="border border-border rounded-full flex justify-center items-center w-16 h-16 p-2.5">
+                <div className="border border-border rounded-full bg-background flex justify-center items-center w-16 h-16 p-2.5">
                   <Image
                     src={"/um_logo.png"}
                     width={50}
@@ -173,7 +173,7 @@ const Home = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-grow gap-2 rounded-xl p-2.5 border border-ring hover:bg-muted duration-300"
+              className="flex flex-grow bg-background-offset gap-2 rounded-xl p-2.5 border border-ring hover:bg-muted duration-300"
             >
               <div className={`p-3 rounded-lg w-fit ${tech.bgColor}`}>
                 {tech.icon}

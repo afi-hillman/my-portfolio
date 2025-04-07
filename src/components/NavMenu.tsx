@@ -9,8 +9,7 @@ import Image from "next/image";
 const NavMenu = () => {
   const [openTheme, setOpenTheme] = useState(false);
   const themes = [
-    { name: "earth", colors: ["#5a7e46", "#f5f1e6", "#2c2418", "#a65e2e"] },
-    { name: "light", colors: ["#99c221", "#fafbf5", "#41474c", "#e55812"] },
+    { name: "light", colors: ["#5a7e46", "#f5f1e6", "#2c2418", "#a65e2e"] },
     { name: "dark", colors: ["#ff5277", "#0e141b", "#ffffff", "#43a9a3"] },
   ];
   const { setTheme } = useTheme();
@@ -21,7 +20,7 @@ const NavMenu = () => {
         className={`
           w-full transition-all duration-300 ease-in-out 
           overflow-hidden
-          ${openTheme ? "h-[130px]" : "h-0"}
+          ${openTheme ? "h-[140px]" : "h-0"}
         `}
       >
         <div className="flex items-center justify-end mt-2">
@@ -46,7 +45,9 @@ const NavMenu = () => {
               className="rounded-md border border-border w-full h-fit py-4 cursor-pointer group hover:bg-muted transition-all duration-300 ease-in-out flex flex-col items-center justify-center gap-4"
               onClick={() => setTheme(item.name)}
             >
-              <p>{item.name}</p>
+              <div className="py-1 px-4 rounded-xl border border-border bg-muted text-text-offset">
+                <p>{item.name}</p>
+              </div>
               <div className="flex items-center gap-2">
                 {item?.colors?.map((color, colorIndex) => (
                   <div
