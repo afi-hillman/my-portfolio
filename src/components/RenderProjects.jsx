@@ -16,7 +16,7 @@ const RenderProjects = () => {
                   width={1920}
                   height={1080}
                   alt="project image"
-                  className="bg-cover rounded-xl opacity-75 group-hover:scale-105 transition-transform duration-300"
+                  className="bg-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6 w-full absolute text-white bg-black/80 bottom-0  translate-y-14 group-hover:translate-y-0 transition-all duration-300">
@@ -61,7 +61,7 @@ const RenderProjects = () => {
                   {project.subtitle}
                 </p>
                 <div className="mt-4 group">
-                  <button className="bg-white text-black rounded-md flex items-center gap-2 px-2 py-1">
+                  <button className="bg-primary text-text rounded-md flex items-center gap-2 px-2 py-1">
                     <p>Learn more</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

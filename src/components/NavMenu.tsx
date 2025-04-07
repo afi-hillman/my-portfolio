@@ -9,8 +9,8 @@ import Image from "next/image";
 const NavMenu = () => {
   const [openTheme, setOpenTheme] = useState(false);
   const themes = [
-    { name: "earth", colors: ["#5a7e46", "#f5f1e6", "#2c2418", "#a65e2e"] },
-    { name: "light", colors: ["#99c221", "#fafbf5", "#41474c", "#e55812"] },
+    { name: "light", colors: ["#5a7e46", "#f5f1e6", "#2c2418", "#a65e2e"] },
+    // { name: "light", colors: ["#99c221", "#fafbf5", "#41474c", "#e55812"] },
     { name: "dark", colors: ["#ff5277", "#0e141b", "#ffffff", "#43a9a3"] },
   ];
   const { setTheme } = useTheme();
