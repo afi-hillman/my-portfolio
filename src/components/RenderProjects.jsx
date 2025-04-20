@@ -62,7 +62,7 @@ const RenderProjects = () => {
                 </p>
                 <div className="mt-4 group">
                   <button className="bg-primary text-text rounded-md flex items-center gap-2 px-2 py-1">
-                    <p>Learn more</p>
+                    <p className="text-white">Learn more</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"

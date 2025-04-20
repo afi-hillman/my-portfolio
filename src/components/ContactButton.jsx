@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "./ui/button";
 import CustomInput from "./CustomInput";
 import CustomTextarea from "./CustomTextarea";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactButton = () => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -36,12 +37,13 @@ const ContactButton = () => {
 
       if (res.ok) {
         console.log("Success:", result);
+        toast.success("Your message was sent successfully!");
         reset();
       } else {
-        console.error("Error:", result.error);
+        toast.error(result.error || "Uh-oh, something went wrong.");
       }
     } catch (error) {
-      console.error("Server Error:", error);
+      toast.error(result.error || "Server error. Try again later.");
     } finally {
       setIsSubmitting(false);
       setOpenDialog(false);
@@ -62,21 +64,31 @@ const ContactButton = () => {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Drop me a message!</DialogTitle>
-            <DialogDescription>
-              Let&apos;s build something great together.
-            </DialogDescription>
+            <DialogDescription>I'll get back to you soon!</DialogDescription>
           </DialogHeader>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col gap-2">
               <label>Name</label>
               <CustomInput {...register("name", { required: true })} />
-              {errors.name && <span>This field is required</span>}
+              {errors.name && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
               <label>Email</label>
               <CustomInput {...register("email", { required: true })} />
-              {errors.email && <span>This field is required</span>}
+              {errors.email && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
               <label>Message</label>
               <CustomTextarea {...register("message", { required: true })} />
-              {errors.message && <span>This field is required</span>}
+              {errors.message && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
               <Button
                 type="submit"
                 disabled={isSubmitting}
@@ -88,6 +100,7 @@ const ContactButton = () => {
           </form>
         </DialogContent>
       </Dialog>
+      <Toaster />
     </>
   );
 };
