@@ -143,12 +143,12 @@ export default NavMenu;
 
 export const navItems = [
   { prefix: "01", label: "home", href: "/", disabled: false },
-  { prefix: "02", label: "about", href: "/about", disabled: true },
+  { prefix: "02", label: "contact", href: "/contact", disabled: true },
+  { prefix: "03", label: "about", href: "/about", disabled: true },
   {
-    prefix: "03",
-    label: "achievements",
-    href: "/achievements",
+    prefix: "04",
+    label: "newsletter",
+    href: "/newsletter",
     disabled: true,
   },
-  { prefix: "04", label: "newsletter", href: "/newsletter", disabled: true },
 ];
