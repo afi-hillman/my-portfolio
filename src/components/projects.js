@@ -8,7 +8,11 @@ export const projects = [
     title: "adnexioHR",
     subtitle:
       "Developed time & attendance module for HR Management System of INVOKE's in-house product, collaboration with Tencent.",
-    tech: [techFinder("React"), techFinder("Material UI")].filter(Boolean),
+    tech: [
+      techFinder("React"),
+      techFinder("Material UI"),
+      techFinder("REST API"),
+    ].filter(Boolean),
     logo: "/adnexio_logo.png",
     image: "/project_adnexio_time_attendance.png",
     description: (

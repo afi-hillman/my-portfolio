@@ -17,6 +17,7 @@ export default {
         border: "var(--color-border)",
         primary: "var(--color-primary)",
         "primary-offset": "var(--color-primary-offset)",
+        "primary-light": "var(--color-primary-light)",
         secondary: "var(--color-secondary)",
         "secondary-offset": "var(--color-secondary-offset)",
         ring: "var(--color-ring)",
