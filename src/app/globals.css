@@ -40,6 +40,7 @@
     --color-muted-foreground: #3b3b3b;
     --color-primary: #ff5277;
     --color-primary-offset: #ff2957;
+    --color-primary-light: #ff7d97;
     --color-secondary: #43a9a3;
     --color-secondary-offset: #70c7c1;
   }
@@ -55,6 +56,7 @@
     --color-muted-foreground: #4a3e2a;
     --color-primary: #6b914f;
     --color-primary-offset: #4d703a;
+    --color-primary-light: #8bb970;
     --color-secondary: #b8663c;
     --color-secondary-offset: #d18657;
   }
