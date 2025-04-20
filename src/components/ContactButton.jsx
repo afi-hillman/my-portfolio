@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -13,18 +13,45 @@ import CustomInput from "./CustomInput";
 import CustomTextarea from "./CustomTextarea";
 
 const ContactButton = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        console.log("Success:", result);
+        reset();
+      } else {
+        console.error("Error:", result.error);
+      }
+    } catch (error) {
+      console.error("Server Error:", error);
+    } finally {
+      setIsSubmitting(false);
+      setOpenDialog(false);
+    }
+  };
+
   return (
     <>
-      <Dialog>
-        <DialogTrigger asChild>
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+        <DialogTrigger asChild onClick={() => setOpenDialog(true)}>
           <div className="bg-primary rounded-full border-ring border py-4 px-3 text-background h-[60px] flex gap-2 items-center hover:bg-primary-offset  duration-300 cursor-pointer transform transition-transform hover:-rotate-12 origin-bottom-left w-fit">
             <div className="relative rounded-full bg-green-500 w-4 h-4">
               <div className="rounded-full absolute bg-green-500 animate-ping w-4 h-4"></div>
@@ -50,7 +77,11 @@ const ContactButton = () => {
               <label>Message</label>
               <CustomTextarea {...register("message", { required: true })} />
               {errors.message && <span>This field is required</span>}
-              <Button type="submit" className="text-white">
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="text-white"
+              >
                 Submit
               </Button>
             </div>

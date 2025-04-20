@@ -6,7 +6,7 @@ const CustomInput = forwardRef(({ className, ...rest }, ref) => {
     <input
       ref={ref}
       className={clsx(
-        "rounded-md p-2 border border-border focus:outline-1 focus:outline-primary-offset",
+        "rounded-md p-2 border border-border focus:outline-1 focus:outline-primary",
         className
       )}
       {...rest}

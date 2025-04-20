@@ -1,15 +1,29 @@
-// app/api/test/route.js
 import dbConnect from "@/lib/dbConnect";
-import mongoose from "mongoose";
+import ContactForm from "@/models/ContactForm";
 
-export async function GET() {
+export async function POST(request) {
   await dbConnect();
 
-  const collections = await mongoose.connection.db.listCollections().toArray();
-  const collectionNames = collections.map((col) => col.name);
+  const body = await request.json();
 
-  return new Response(JSON.stringify({ collections: collectionNames }), {
-    status: 200,
+  if (!body.name || !body.email || !body.message) {
+    return new Response(
+      JSON.stringify({ success: false, error: "Invalid data" }),
+      {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+
+  const submitFormData = await ContactForm.create({
+    name: body.name,
+    email: body.email,
+    message: body.message,
+  });
+
+  return new Response(JSON.stringify({ success: true, data: submitFormData }), {
+    status: 201,
     headers: { "Content-Type": "application/json" },
   });
 }
