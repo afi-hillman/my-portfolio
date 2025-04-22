@@ -4,7 +4,7 @@ import { useState } from "react";
 const Footer = () => {
   const [easterEgg, setEasterEgg] = useState(false);
   return (
-    <div className="border-t border-[#E5E5E5] py-8 mt-20">
+    <div className="border-t border-border py-8 mt-20">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8 flex justify-between items-center">
         <div className="text-sm flex items-center gap-2">
           <p>© 2025 Afi Hillman |</p>
