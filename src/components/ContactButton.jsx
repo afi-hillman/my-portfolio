@@ -61,7 +61,7 @@ const ContactButton = () => {
             <p>Let&apos;s Connect!</p>
           </div>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="w-[90vw] md:w-[600px] rounded-md">
           <DialogHeader>
             <DialogTitle>Drop me a message!</DialogTitle>
             <DialogDescription>I'll get back to you soon!</DialogDescription>
@@ -116,6 +116,16 @@ const ContactButton = () => {
                   "Submit"
                 )}
               </Button>
+              <div className="bg-muted p-2 rounded-md  text-muted-foreground">
+                <p className="text-sm">
+                  <span className="font-semibold">Privacy Notice</span>: By
+                  submitting this form, you consent to the collection and use of
+                  your personal data in accordance with the Personal Data
+                  Protection Act 2010 (PDPA) of Malaysia. Your data will only be
+                  used to respond to your message and will not be shared with
+                  third parties.
+                </p>
+              </div>
             </div>
           </form>
         </DialogContent>
